@@ -1,4 +1,4 @@
 export interface IButton{
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: () => void
   title?: string
 }
