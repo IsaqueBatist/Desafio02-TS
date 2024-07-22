@@ -7,7 +7,7 @@ import React from "react";
 export const Footer = () => {
   return (
     <ChakraProvider>
-      <Box padding='10px' display='flex' alignItems="center" justifyContent='center'>
+      <Box padding='10px' display='flex' alignItems="center" justifyContent='center' backgroundColor='#fff'>
         <Text opacity='0.8'>
           &copy; Desevolvido por Isaque
         </Text>

@@ -9,13 +9,25 @@ import {
 } from '@chakra-ui/react'
 import { login } from './services/login';
 import { MyButon } from './components/Buton';
-import { Card } from './components/card';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Cont from './pages/Cont';
 
 
 function App() {
   return (
     <>
-      <Card />
+      <BrowserRouter>
+        <ChakraProvider>
+          <Layout>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/conta' element={<Cont />} />
+            </Routes>
+          </Layout>
+        </ChakraProvider>
+      </BrowserRouter>
+
     </>
   );
 }
