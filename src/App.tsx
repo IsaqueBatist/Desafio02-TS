@@ -12,6 +12,7 @@ import { MyButon } from './components/Buton';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Cont from './pages/Cont';
+import ContaInfo from './pages/ContaInfo';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           <Layout>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/conta' element={<Cont />} />
+              <Route path='/conta/:id' element={<Cont />} />
+              <Route path='/infoconta' element={<ContaInfo />} />
             </Routes>
           </Layout>
         </ChakraProvider>

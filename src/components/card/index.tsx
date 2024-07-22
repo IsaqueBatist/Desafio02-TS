@@ -1,24 +1,13 @@
 import { Box, Center, Input } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { login } from "../../services/login";
 import { MyButon } from "../Buton";
-import { IUserData } from "./type";
-import { api } from "../../api";
 
 
 export const Card = () => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState('')
-  const [userData, setUserData] = useState<null | IUserData>({} as IUserData)
-
-  useEffect(() => {
-    const getData = async () => {
-      const data: any | IUserData = await api
-      if (data) setUserData(data)
-    }
-    getData()
-  }, [])
 
   return (
     <Box minHeight='100vh' backgroundColor='#9413dc' padding='5px'>
