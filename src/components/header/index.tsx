@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {
   ChakraProvider,
   Box,
@@ -7,8 +7,10 @@ import {
   Center
 } from '@chakra-ui/react'
 import logo from '../../assets/logo.png'
+import { AppContext } from "../../App";
 
 export const Header = () => {
+  const context = useContext(AppContext)
   return (
     <ChakraProvider>
       <Box padding='10px' display='flex' alignItems="center" backgroundColor='#fff'>
