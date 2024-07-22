@@ -9,7 +9,7 @@ export const Footer = () => {
     <ChakraProvider>
       <Box padding='10px' display='flex' alignItems="center" justifyContent='center'>
         <Text opacity='0.8'>
-          ©Desevolvido por Isaque
+          &copy; Desevolvido por Isaque
         </Text>
       </Box>
     </ChakraProvider>
