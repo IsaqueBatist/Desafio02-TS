@@ -1,15 +1,25 @@
 import { ChakraProvider, Box, Center, Input } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { login } from "../../services/login";
 import { MyButon } from "../Buton";
 import { Layout } from "../layout";
-import { ICard } from "./type";
+import { ICard, IUserData } from "./type";
+import { api } from "../../api";
 
-export const Card = ({ id, paragraph, details }: ICard) => {
+
+export const Card = () => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState('')
+  const [userData, setUserData] = useState<IUserData>({} as IUserData)
 
+  useEffect(() =>{
+    const getData = async () => {
+      const data: IUserData = await api as IUserData
+      if(data) setUserData(data)
+    }
+    getData()
+  }, [])
 
   return (
     <ChakraProvider>
