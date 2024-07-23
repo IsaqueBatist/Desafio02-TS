@@ -17,7 +17,7 @@ const Home = () => {
   const handleValidation = async (userEmail: string) => {
     const loggedIn = await login(userEmail)
     if (!loggedIn){
-      alert('Email inválido')
+      return alert('Email inválido')
     }else{
       setlsLogedIn(true)
       navigate(`/conta/1`)
