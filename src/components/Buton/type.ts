@@ -1,4 +1,6 @@
+import { MouseEventHandler } from "react"
+
 export interface IButton{
-  onClick?: () => void
+  onClick?: MouseEventHandler
   title?: string
 }

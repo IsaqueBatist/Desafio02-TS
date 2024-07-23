@@ -4,7 +4,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import CardInfo from '../../components/CardInfo';
 import { api } from '../../api';
 import { IUserData } from '../../components/card/type';
-import { AppContext } from '../../App';
+import { AppContext } from '../../context/AppContext';
+
 const Cont = () => {
 
   const [userData, setUserData] = useState<null | IUserData>({} as IUserData)
@@ -13,11 +14,12 @@ const Cont = () => {
 
   const { id } = useParams()
   const navigate = useNavigate()
+  const {islogedIn} = useContext(AppContext)
 
   if (userData && id !== userData.id) {
     navigate('/')
   }
-
+  !islogedIn && navigate('/')
 
   useEffect(() => {
     const getData = async () => {

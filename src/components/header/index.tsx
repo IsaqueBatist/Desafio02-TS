@@ -7,7 +7,8 @@ import {
   Center
 } from '@chakra-ui/react'
 import logo from '../../assets/logo.png'
-import { AppContext } from "../../App";
+import { AppContext } from "../../context/AppContext";
+
 
 export const Header = () => {
   const context = useContext(AppContext)
