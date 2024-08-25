@@ -4,8 +4,12 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom';
 import { AppContextProvider } from './context/AppContext';
 import MainRoutes from './routes/routes';
+import { createLocalStorage, getAllLocalStorage } from './services/storage';
 
 function App() {
+
+  createLocalStorage()
+
   return (
     <>
       <BrowserRouter>
@@ -17,7 +21,6 @@ function App() {
           </ChakraProvider>
         </AppContextProvider>
       </BrowserRouter>
-
     </>
   );
 }
